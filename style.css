@@ -11,21 +11,24 @@
 *::after {
     box-sizing: border-box;
 }
+body {
+    width: 100vw;
+    background-color: var(--light-black);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+} 
 html {
     scroll-behavior: smooth;
-    color: white;
 }
+/*  navbar begins  */
 .bg-img {
-    background-color: var(--light-black);
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    font-family: 'Open Sans', sans-serif;
+    height: 100vh;  
 }
 .container {
     position: fixed;
-    margin: 20px;
-    width: auto;
+    
+    width: 100%;
+    margin: 0;
     top: 0;
 }
 .topnav {
@@ -33,10 +36,10 @@ html {
     background-color: #333;
 }
 .topnav a {
-    float: left;
+    float: right;
     color: var(--green-main);
     text-align: center;
-    padding: 14px 16px;
+    padding: 2vh 16px;
     text-decoration: none;
     font-size: 17px;
     cursor: pointer;
@@ -45,88 +48,124 @@ html {
     background-color: #ddd;
     color: black;
 }
+/*  intro section  */
 .intro {
     text-align: center;
 }
 .intro h1 {
     font-size: 4rem;
     font-weight: 800;
-    position: relative;
-    top: 30vh;
+    margin-top: 8rem;
     color: var(--green-main);
 }
 .intro p {
     font-size: 1.5rem;
     font-weight: 300;
-    position: relative;
-    top: 34vh;
+    margin: 1rem;
     color: rgb(192, 191, 191);
 }
 .intro a {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 300;
-    position: relative;
-    top: 60vh;
+    position: absolute;
+    bottom: 2rem;
+    right: 0;
+    left: 0;
+    color: rgb(192, 191, 191);
+    text-decoration: none;
+    transition: 0s border-bottom;
 } 
+.intro a:hover {
+    border-bottom: 1px solid var(--green-main);
+    transition-delay: 0.15s;
+}
+/*  About section */
 #about {
-    background-color: lightblue;
-    height: 100vh;
-    width: 100%;
+    height: 50vh;
+    font-size: 1.5rem;
+    padding: 10vh;
 }
+#about h2 {
+    font-size: 3rem;
+}
+.highlightme {
+    color: var(--green-main);
+    font-weight: 800;
+}
+/*  projects section  */
 #projects {
-    background-color: var(--light-black);
     text-align: center;
-    padding: 3rem 8rem;
+    padding-top: 15%;
 }
-.portifolio {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-evenly;
+#projects h2 {
+
+    margin-bottom: 2rem;
 }
-.project-tile {
-    padding: 5rem 3rem;
-    margin: 2rem 0;
+@media screen and (min-width:500px){
+    .portifolio { 
+        display: grid;
+        grid-template-columns: 40vw 40vw;
+        justify-content: space-evenly; 
+    }
+}
+.box-style {
+    height: 0;
+    width: 80%;
+    padding-bottom: 80%;
+    background-color: red;
     box-shadow: 0 0 10px var(--green-main);
+    margin: 3vh auto;
+}
+
+/*  contact section  */
+#textarea {
+    height: 10rem;
 }
 #contact {
-    background-color: var(--light-black);
-    height: 100vh;
-    padding: 5rem;
+    height: 90vh;
+    padding-top: 15%;
+    text-align: center;
+    position: relative;
 }
-.contact-container {
-    display: flex;
-    justify-content: space-evenly;
+
+#contact h2 {
+    margin-bottom: 5rem;
 }
-.grid {
-    display: grid;
-    grid-template: repeat(2, 2rem) 7rem / 30ch 50ch;
+.image-box img {
+    height: auto;
+    width: 7vh;
+}
+#profile-link {
+    bottom: 2%;
+    position: absolute;
+    left: 0;
+    right: 0;
 }
 .darker-black {
     background-color: var(--light-black);
     border: 1px solid var(--green-main);
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     border-radius: 3px;
+    max-width: 50ch;
 }
+.contact-box {
+    text-align: left;
+    margin: auto;
+}
+form {
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--light-black) inset !important;
+    -webkit-text-fill-color: white !important;
+} 
 
-#subject {
-    grid-column: span 2;
-}
-#messege {
-    grid-column: span 2;
-}
-.contact-container iframe{
-    height: 490p;
-    width: 90%;   
-    background-color: var(--light-black);
-    border: 1px solid var(--green-main);
-}
-#contact a {
-    bottom: 0%;
-    position: fixed;
-}
 #lets-talk-btn {
     padding: 15px 30px;
+    margin: 0 40%;
     margin-top: 2rem;
     background-color: var(--light-black);
     color: var(--green-main);
@@ -139,3 +178,4 @@ html {
 #lets-talk-btn:hover {
     box-shadow: 0 0 10px var(--green-main);
 }
+
